@@ -16,8 +16,9 @@ while True:
             
             1. Tiempo
             2. Velocidad
-            3. Historial de conversiones
-            4. Salir
+            3. Historial de conversiones por pantalla
+            4. Exportar historial en formato CSV
+            5. Salir
             """)
       #Se declara variable op y se realiza conversión explicita del input a int
       op = int(input("Inserte la opción deseada: "))
@@ -163,6 +164,9 @@ while True:
             SpeedViewHistory()
             
       elif op == 4:
+            print("Exportar historial en CSV")
+            
+      elif op == 5:
             #El usuario podrá salir del programa
             print("Hasta pronto!")
             exit()

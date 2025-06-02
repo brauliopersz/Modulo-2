@@ -39,3 +39,15 @@ def TimeViewHistory():
 def SpeedViewHistory():
     for clave, valor in SpeedDic.items():
         print(f"{clave} - Valor convertido: {valor['speed']}, Tipo de conversión: {valor['tipo']}, Resultado de la conversión: {valor['resultado']}")
+
+
+
+def GuardarInformacionDiccionario(speed, time, tipo, resultado, nombre_archivo = '/Modulo-2/historial.csv'):
+    with open(nombre_archivo, mode='a', encoding='utf-8') as archivo:
+        archivo.write(f"{speed}, {time}, {tipo}, {resultado}")
+        print(f"Informacion del tipo de conversion {tipo} ha sido guardada exitosamente")
+                
+
+def cvsHistory():
+    pass
+        
