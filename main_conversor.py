@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from conversor_tiempo.timeConversion import hourToMinute_Convert, hourToSecond_Convert, minuteToHour_Convert, minuteToSecond_Convert, secondToHour_Convert, secondToMinute_Convert
-from historiales_conversion.convertHistory import SpeedDiccionario, TimeDiccionario, SpeedViewHistory, TimeViewHistory
+from historiales_conversion.convertHistory import SpeedDiccionario, TimeDiccionario, SpeedViewHistory, TimeViewHistory, GuardarInformacionDiccionario
 from conversor_velocidad.speedConversion import KmToMph, KmToMs, MphToKm, MphToMs, MsToKm, MsToMph
 
 print()
@@ -48,6 +48,7 @@ while True:
                   print(f"{horas} horas expresado en minutos es igual a {hourToMinute_Convert(horas)} minutos")
                   resultado = hourToMinute_Convert(horas)
                   TimeDiccionario(horas, tipo, resultado)
+                  GuardarInformacionDiccionario(horas, tipo, resultado)
                   
             
             elif op == 2:
@@ -57,6 +58,7 @@ while True:
                   print(f"{horas} horas expresado en segundos es igual a {hourToSecond_Convert(horas)} segundos")
                   resultado = hourToSecond_Convert(horas)
                   TimeDiccionario(horas, tipo, resultado)
+                  GuardarInformacionDiccionario(horas, tipo, resultado)
             
             elif op == 3:
                   tipo = "Minuto a hora"
@@ -65,6 +67,7 @@ while True:
                   print(f"{minutos} Minuto/s expresado en hora/s es igual a {minuteToHour_Convert(minutos)} hora/s")
                   resultado = minuteToHour_Convert(minutos)
                   TimeDiccionario(minutos, tipo, resultado)
+                  GuardarInformacionDiccionario(minutos, tipo, resultado)
             
             elif op == 4:
                   tipo = "Minuto a segundo"
@@ -73,6 +76,7 @@ while True:
                   print(f"{minutos} minuto/s expresado en segundos es igual a {minuteToSecond_Convert(minutos)} segundos")
                   resultado = minuteToSecond_Convert(minutos)
                   TimeDiccionario(minutos, tipo, resultado)
+                  GuardarInformacionDiccionario(minutos, tipo, resultado)
             
             elif op == 5:
                   tipo = "Segundo a hora"
@@ -81,6 +85,7 @@ while True:
                   print(f"{segundos} Segundos expresado en horas es igual a {secondToHour_Convert(segundos)} hora/s")
                   resultado = secondToHour_Convert(segundos)
                   TimeDiccionario(segundos, tipo, resultado)
+                  GuardarInformacionDiccionario(segundos, tipo, resultado)
             
             elif op == 6:
                   tipo = "Segundo a Minuto"
@@ -89,6 +94,7 @@ while True:
                   print(f"{segundos} Segundo/s expresado en minutos es igual a {secondToMinute_Convert(segundos)} minuto/s")
                   resultado = secondToMinute_Convert(segundos)
                   TimeDiccionario(segundos, tipo, resultado)
+                  GuardarInformacionDiccionario(segundos, tipo, resultado)
             
 
       elif op == 2:
@@ -113,7 +119,8 @@ while True:
                   km = int(input("Inserte el valor expresado en Kilometro/s: "))
                   print(f"El resultado de convertir {km} {tipo} es igual a: {KmToMs(km)}")
                   resultado = KmToMs(km)
-                  SpeedDiccionario(km, tipo, resultado )
+                  SpeedDiccionario(km, tipo, resultado)
+                  GuardarInformacionDiccionario(km, tipo, resultado)
                   
             elif op == 2:
                   tipo = "Kilometro/s por hora a Milla/s por Hora"
@@ -122,6 +129,7 @@ while True:
                   print(f"El resultado de convertir {km} {tipo} es igual a {KmToMph(km)}")
                   resultado = KmToMph(km)
                   SpeedDiccionario(km, tipo, resultado )
+                  GuardarInformacionDiccionario(km, tipo, resultado)
                   
             elif op == 3:
                   tipo = "Metro/s por Segundo a Kilometro/s por Hora"
@@ -130,6 +138,7 @@ while True:
                   print(f"El resultado de convertir {metro} {tipo} es igual a {MsToKm(metro)}")
                   resultado = MsToKm(metro)
                   SpeedDiccionario(metro, tipo, resultado )
+                  GuardarInformacionDiccionario(metro, tipo, resultado)
                   
             elif op == 4:
                   tipo = "Metro/s por Segundo a Milla/s por Hora"
@@ -138,6 +147,7 @@ while True:
                   print(f"El resultado de convertir {metro} {tipo} es igual a {MsToMph(metro)}")
                   resultado = MsToMph(metro)
                   SpeedDiccionario(metro, tipo, resultado )
+                  GuardarInformacionDiccionario(metro, tipo, resultado)
                   
             elif op == 5:
                   tipo = "Milla/s por Hora a Kilometro/s por Hora"
@@ -146,6 +156,7 @@ while True:
                   print(f"El resultado de convertir {milla} {tipo} es igual a {MphToKm(milla)}")
                   resultado = MphToKm(milla)
                   SpeedDiccionario(milla, tipo, resultado )
+                  GuardarInformacionDiccionario(milla, tipo, resultado)
                   
             elif op == 6:
                   tipo = "Milla por Hora a Metro por segundo"
@@ -154,6 +165,7 @@ while True:
                   print(f"El resultado de convertir {milla} en {tipo} es igual a {MphToMs(milla)}")
                   resultado = MphToMs(milla)
                   SpeedDiccionario(milla, tipo, resultado )
+                  GuardarInformacionDiccionario(milla, tipo, resultado)
                   
             else:
                   print("Inserte una opción válida!")

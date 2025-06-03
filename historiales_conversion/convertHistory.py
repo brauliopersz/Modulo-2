@@ -5,7 +5,7 @@ indice = 0
 
 
 #Función en donde se encuentra el Diccionario en donde se almacenan las conversiones realizadas en el módulo principal
-def TimeDiccionario(time, tipo, resultado):
+def TimeDiccionario(valor, tipo, resultado):
     global timeHistory
     global indice
     
@@ -13,19 +13,19 @@ def TimeDiccionario(time, tipo, resultado):
     
     timeHistory [indice]= {
         
-        "time": time,
+        "valor": valor,
         "tipo": tipo,
         "resultado": resultado
     }
     
 #Función en donde se encuentra el Diccionario en donde se almacenan las conversiones realizadas en el módulo principal
-def SpeedDiccionario(speed, tipo, resultado):
+def SpeedDiccionario(valor, tipo, resultado):
     
     global SpeedDic
     global indice
     indice += 1
     SpeedDic [indice] = {
-        "speed": speed,
+        "valor": valor,
         "tipo" :tipo,
         "resultado": resultado
     }
@@ -42,12 +42,10 @@ def SpeedViewHistory():
 
 
 
-def GuardarInformacionDiccionario(speed, time, tipo, resultado, nombre_archivo = '/Modulo-2/historial.csv'):
+def GuardarInformacionDiccionario(valor, tipo, resultado, nombre_archivo = 'ITLA/Modulo-2/historial.csv'):
     with open(nombre_archivo, mode='a', encoding='utf-8') as archivo:
-        archivo.write(f"{speed}, {time}, {tipo}, {resultado}")
+        archivo.write(f"\n{valor}, {tipo}, {resultado}")
         print(f"Informacion del tipo de conversion {tipo} ha sido guardada exitosamente")
                 
 
-def cvsHistory():
-    pass
         
